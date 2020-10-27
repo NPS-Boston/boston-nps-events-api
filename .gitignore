@@ -1,0 +1,4 @@
+#skip json files of api data
+*.json
+#skip api key files
+*.key
