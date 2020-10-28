@@ -36,6 +36,8 @@ def getNPS(d, de=""):
     fn = d + ".json"
     if de != "":
         fn = d + "_" + de + ".json"
+    else:
+        de = d
     subprocess.run(["wget", "https://developer.nps.gov/api/v1/events?parkCode=" + parkCodes + "&dateStart=" + d + "&dateEnd=" + de + "&pageSize=50&pageNumber=1&expandRecurring=true&api_key=" + key, "-O", fn])
     file = open(fn,encoding="utf-8")
     DATA = json.loads(file.read())
